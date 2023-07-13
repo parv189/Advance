@@ -1,0 +1,22 @@
+#Reg-Ex
+
+/reg-ex/ - between //
+^ - start
+$ - end
+[] - group of char
+(?:)  - non capturing group
+? - token before ? is optional
++ - group before + can repeat infinite times
+{2} - group before + can repeat 2 times
+\s - any type of space
+0-9 - numbers
+\d - digites
+A-Za-z - A to Z or a to z
+
+
+
+
+examples
+1) /^(?:10|20|30)+$/ - value should be 10 or 20 or 30
+2) /^(?:1)?(?:[0-9])?(?:[0-9])$/ - min 0 max 199 integer
+3) /^(?:[0-5])?(?:[0-9])$/ - 0 to 59 range integer

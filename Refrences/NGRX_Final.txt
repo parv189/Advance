@@ -1,0 +1,11 @@
+ref : https://www.thisdot.co/blog/working-with-ngrx-effects/
+    : https://ngrx.io/guide/store
+    : https://andrewhalil.com/2021/02/21/implementing-crud-operations-with-ngrx-store/
+
+packags : 
+
+npx npx ng add @ngrx/store
+npx npm install @ngrx/effects
+npx npm install @ngrx/store-devtools
+npx ng add @ng-bootstrap/ng-bootstrap
+

@@ -1,0 +1,68 @@
+Refrence : (https://ngrx.io/guide/store)
+
+step-1 : Generate a new project
+
+step-2 : run command : npx ng add @ngrx/store
+
+step-3 : create a new file named counter.actions.ts 
+
+step-4 : Add Following code in it
+import { createAction } from '@ngrx/store';
+export const increment = createAction('[Counter Component] Increment');
+export const decrement = createAction('[Counter Component] Decrement');
+export const reset = createAction('[Counter Component] Reset');
+
+step-5 : create a new file named counter.reducer.ts
+
+step-6 : Add Following code in it
+import { createReducer, on } from '@ngrx/store';
+import { increment, decrement, reset } from './counter.actions';
+
+export const initialState = 0;
+
+export const counterReducer = createReducer(
+  initialState,
+  on(increment, (state) => state + 1),
+  on(decrement, (state) => state - 1),
+  on(reset, (state) => 0)
+);
+
+step-7  : Update Module.ts
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './counter.reducer';
+.
+.
+StoreModule.forRoot({ count: counterReducer })
+
+step-8 : Create new Component 
+
+step-9 : add following code in that component ts file
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { increment, decrement, reset } from '../counter.actions';
+.
+count$: Observable<number>;
+ 
+  constructor(private store: Store<{ count: number }>) {
+    this.count$ = store.select('count');
+  }
+ 
+  increment() {
+    this.store.dispatch(increment());
+  }
+ 
+  decrement() {
+    this.store.dispatch(decrement());
+  }
+ 
+  reset() {
+    this.store.dispatch(reset());
+  }
+step-10 : add following code in that component html file
+<button (click)="increment()">Increment</button>
+<div>Current Count: {{ count$ | async }}</div>
+<button (click)="decrement()">Decrement</button>
+<button (click)="reset()">Reset Counter</button>
+
+step-11 : call that component in app.component
+<app-my-counter></app-my-counter>

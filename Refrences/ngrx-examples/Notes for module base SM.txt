@@ -1,0 +1,12 @@
+#Notes For Module base Store Management
+
+---> pipe() function in rxjs used to connect 2 functions.
+--->  map is a RxJS pipeable operator. used to convert data which is returning by the Observable.pipe(map(books)=>books.items)
+---> Store: A store holds the whole state tree of your application. The only way to change the state inside it is to dispatch an action on it.
+    Store Methods:
+    getState()
+    dispatch(action)
+    subscribe(listener)
+    replaceReducer(nextReducer)
+---> props: The props method is used to define any additional metadata needed for the handling of the action.
+---> createReducer: Creates a reducer function to handle state transitions.

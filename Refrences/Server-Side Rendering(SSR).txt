@@ -1,0 +1,18 @@
+#Servar-Side Rendering
+==============================================================================
+
+---> Angular Universal allows Angular to render an application on the server.
+---> It generates static HTML contents, which represents an application state.
+---> In server-side rendering an application generally renders in a browser faster.
+
+====> steps to use SSR in to your application
+Step 1. Enable Server-Side Rendering
+command - ng add @nguniversal/express-engine
+
+Step 2. Enable Client Hydration(optional)
+ex - import in module.ts
+import {provideClientHydration} from '@angular/platform-browser';
+ providers: [ provideClientHydration() ],  // add this line
+
+Step 3. Start the server
+command - npm run dev:ssr

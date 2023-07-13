@@ -1,0 +1,51 @@
+***NgRx (Angular Reactive extentions) Notes***
+===========================================================================
+(1.0) Introduction :
+git_URL : 'https://github.com/angular-university' 
+repo_Name : ngrx-course
+
++clone and open course
+
+run command : npm install
+	    : git checkout 1-start
+	    : git branch
+	    : npm run server
+	    : npm start
+drowbacks of old approch : we have to fetch data each time when the application reloads.
+			 : bad user experience
+ ---------------------------------------------------------------------------------------
+State: it is the data received via API calls, user inputs, presentation UI State, app preferences, etc
+Store: The store is what holds the app's state. 
+
+Action: A unique event dispatched from components and services that describe how the state should be changed.
+ For example, ‘Add Customer’ can be an action that will change the state (i.e. add a new customer to the list).
+
+Reducer: All the state changes happen inside the reducer; it responds to the action and, based on that action, 
+it will create a new immutable state and return it to the store.
+
+Selector: Selector is a function used for obtaining a part of the state from the store.
+
+Effect: A mechanism that listens for dispatched actions in an observable stream, processes the server response, 
+and returns new actions either immediately or asynchronously to the reducer to change the state. Please note that 
+we are not using 'effect' in this example app.
+============================================================================
+(1.1) use ngrx in owr code :
+to add ngrx run command : ng add @ngrx/store
+then run command : ng add @ngrx/store-devtools
+
+install extention : Redux Devtools
+
++npm start 
+
+run command : ng generate store auth/Auth --module auth.module.ts
+
+to create module : ng g module my-components  OR
+npx ng generate module CustomerDashboard --project=angular-ngrx-course
+========================================================================================
+new practice from site : ('https://dzone.com/articles/angular-app-state-management-with-ngrx')
+
+ckeck version of node:node --version
+	&Angular cli :ng version
+to update cli :
+npm uninstall -g @angular/cli
+npm install -g @angular/cli@latest

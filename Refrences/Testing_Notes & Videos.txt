@@ -1,0 +1,61 @@
+#Unit Testing
+===> Video link
+\\192.168.100.114\Video_Tutorials\Video_Tutorials\Angular\Angular_Unit_Test_case_tutorial
+
+===> Introduction
+Jasmin & Karma
+Jasmin is js testing framework
+test each line of java script
+it's BDD (Behavior Driven Development)
+
+Karma is testing automation tool
+used to run test cases
+
+===> commands:
+	to run spec file : ng test
+	
+
+===> TestCase Examples : 
+ex - 1 - it('My Test', ()=>{
+    expect(1+1 == 2).toBe(4+4 == 8)		***if both condition is true then success
+  });
+
+
+---> we can use function directly aftet importing
+ex - 1 -import { multiple } from './multiple';
+		it("show multiple",()=>{
+    	expect(multiple(5,10)).toBe(50)
+  	});
+---> we can use instance of class after importing class
+ex - 1 -import { AppComponent } from './app.component';
+	let component = new AppComponent();
+		it("Show Massage", ()=>{
+    	expect(component.showmsg("Hello")).toBe("Hello")
+  	});
+---> use x before it to exclude test case
+
+================================================================================================
+# Matchers
+---> used to compare except result with actual result.
+---> to do boolean comparson
+	Matchrs
+		- Inbuilt Matchrs
+			- ToBe ---> (use to compare str,num,bool)(same as ===)
+			- ToEqual ---> (use to compare other)(same as ===)
+			- ToBeTrue ---> (to check if the value is true or not)(for '1' it's fail)
+			- ToBeFalse ---> (to check if the value is false or not)
+			- ToBeTruthy ---> (to check if the value is true or not)(for '1' it's true)
+			- ToBeFalsy ---> (to check if the  value is false or not)(expext true or '1')
+			- ToBeGreaterThen ---> (to check if expect value is greater then or not)
+			- ToBeGreaterThenOrEqual ---> (to check if expectvalue is greater then or equal to or not)
+			- ToBeLessThen ---> (to check if expect value is Less then or not)
+			- ToBeLessThen ---> (to check if expectvalue is Less then or equal to or not)
+			- ToMatch ---> (to check if expect value matches the reg-ex)
+			- ToBeCloseTo ---> (to check if expect value is CloseTo other value) - ex - expect(4.334).toBeCloseTo(4.3345,1)
+			
+		- Custom Matchrs
+
+
+=================================================================================================
+#Functions 
+to convert object to arrays - Object.entries(obj)
